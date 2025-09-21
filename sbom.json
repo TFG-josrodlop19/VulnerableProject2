@@ -1,42 +1,24 @@
 {
   "components": [
     {
-      "bom-ref": "xstream-L1",
-      "description": "maven dependency: xstream==1.4.6",
+      "bom-ref": "dom4j-L1",
+      "description": "maven dependency: dom4j==2.1.1",
       "externalReferences": [
         {
           "comment": "Maven Central Repository",
           "type": "distribution",
-          "url": "https://repo1.maven.org/maven2/com/thoughtworks/xstream/xstream/"
+          "url": "https://repo1.maven.org/maven2/org/dom4j/dom4j/"
         }
       ],
-      "name": "com.thoughtworks.xstream:xstream",
-      "purl": "pkg:maven/com.thoughtworks.xstream/xstream@1.4.6",
+      "name": "org.dom4j:dom4j",
+      "purl": "pkg:maven/org.dom4j/dom4j@2.1.1",
       "type": "library",
-      "version": "1.4.6"
-    },
-    {
-      "bom-ref": "commons-collections-L2",
-      "description": "maven dependency: commons-collections==3.1",
-      "externalReferences": [
-        {
-          "comment": "Maven Central Repository",
-          "type": "distribution",
-          "url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/"
-        }
-      ],
-      "name": "commons-collections:commons-collections",
-      "purl": "pkg:maven/commons-collections/commons-collections@3.1",
-      "type": "library",
-      "version": "3.1"
+      "version": "2.1.1"
     }
   ],
   "dependencies": [
     {
-      "ref": "xstream-L1"
-    },
-    {
-      "ref": "commons-collections-L2"
+      "ref": "dom4j-L1"
     }
   ],
   "metadata": {
