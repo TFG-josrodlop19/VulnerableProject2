@@ -8,27 +8,27 @@ import java.nio.file.Paths;
 public class VulnerableApp {
 
     /**
-     * Método "fuzzable" que contiene la lógica vulnerable.
+     * Fuzzable method that processes XML content.
      */
     public static void processXml(String xmlContent) throws Exception {
-        // Se usa directamente la clase de la dependencia dom4j
+        // Direct usage of SAXReader without secure configuration
         SAXReader reader = new SAXReader();
-        
-        // En esta versión, el reader no está configurado para ser seguro por defecto.
-        // Al parsear, procesará las entidades externas.
+
+        // In this version, the reader is not configured to be secure by default.
+        // When parsing, it will process external entities.
         reader.read(new ByteArrayInputStream(xmlContent.getBytes()));
     }
 
     /**
-     * Método main para pruebas manuales.
+     * Main method for manual testing.
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
-            System.err.println("Uso: java -jar <jar_file> <fichero.xml>");
+            System.err.println("Usage: java -jar <jar_file> <file.xml>");
             return;
         }
         String fileName = args[0];
-        System.out.println("[+] Procesando XML desde: " + fileName);
+        System.out.println("[+] Processing XML from: " + fileName);
         String fileContent = new String(Files.readAllBytes(Paths.get(fileName)));
         processXml(fileContent);
     }
